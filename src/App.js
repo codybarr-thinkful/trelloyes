@@ -8,8 +8,9 @@ function App({ store }) {
 		const { header, cardIds } = list
 		console.log(header)
 		const cards = cardIds.map(id => store.allCards[id])
+		const attrs = { header, cards, key: list.id }
 
-		return <List header={header} cards={cards} key={list.id} />
+		return <List {...attrs} />
 	})
 
 	return (
